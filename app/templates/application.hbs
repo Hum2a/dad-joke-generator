@@ -1,7 +1,14 @@
-{{page-title "DadJokeGenerator"}}
+<header>
+  <h1>Dad Joke Generator 😂</h1>
+</header>
 
-{{outlet}}
+<main>
+  <div class="joke-card">
+    <p>{{this.joke}}</p>
+    <button {{on "click" this.loadNewJoke}}>Get Another Joke</button>
+  </div>
+</main>
 
-{{! The following component displays Ember's default welcome message. }}
-<WelcomePage />
-{{! Feel free to remove this! }}
+<footer>
+  <p>&copy; 2024 Dad Joke Generator | Keep laughing, it’s contagious! 😄</p>
+</footer>

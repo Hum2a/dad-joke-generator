@@ -2,23 +2,19 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>DadJokeGenerator</title>
-    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <title>Dad Joke Generator</title>
     {{content-for "head"}}
-
-    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css">
-    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/dad-joke-generator.css">
-
-    {{content-for "head-footer"}}
+    <link rel="stylesheet" href="{{rootURL}}assets/vendor.css">
+    <link rel="stylesheet" href="{{rootURL}}assets/dad-joke-generator.css">
   </head>
   <body>
     {{content-for "body"}}
-
+    <noscript>
+      This app requires JavaScript to run. Please enable JavaScript in your browser.
+    </noscript>
+    <div id="ember-app"></div>
     <script src="{{rootURL}}assets/vendor.js"></script>
     <script src="{{rootURL}}assets/dad-joke-generator.js"></script>
-
-    {{content-for "body-footer"}}
   </body>
 </html>
