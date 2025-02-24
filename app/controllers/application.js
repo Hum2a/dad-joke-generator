@@ -1,19 +1,24 @@
 import Controller from '@ember/controller';
+import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 
 export default class ApplicationController extends Controller {
-  joke = "Click the button to get your first dad joke!";
+  @tracked joke = "Why don't eggs tell jokes? They'd crack up! 😄";
+  @tracked isLoading = false;
 
   @action
   async loadNewJoke() {
+    this.isLoading = true;
     try {
       const response = await fetch('https://icanhazdadjoke.com/', {
         headers: { Accept: 'application/json' }
       });
       const data = await response.json();
-      this.set('joke', data.joke);
+      this.joke = data.joke;
     } catch (error) {
-      this.set('joke', "Oops! Something went wrong. Please try again.");
+      this.joke = "Even dad jokes fail sometimes! Try again? 😅";
+    } finally {
+      this.isLoading = false;
     }
   }
 }

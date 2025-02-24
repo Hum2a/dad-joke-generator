@@ -1,107 +1,146 @@
-/* General Styles */
+/* Modern Reset & Variables */
+:root {
+  --primary: #FF6B6B;
+  --secondary: #4ECDC4;
+  --accent: #FFE66D;
+  --background: #f7f9fc;
+  --text: #2d3436;
+}
+
 body {
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  font-family: 'Poppins', sans-serif;
+  background: var(--background);
   margin: 0;
-  padding: 0;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  color: #333;
+  color: var(--text);
 }
 
 /* Header Styles */
-/* Logo Styling */
 header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #ff6f61;
-  color: white;
-  padding: 20px;
-  width: 100%;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  font-size: 2em;
-  font-weight: bold;
-}
-
-header .logo {
-  width: 200px; /* Adjust size as needed */
-  height: auto;
-  margin-bottom: 10px;
-  animation: logo-bounce 2s infinite;
-}
-
-@keyframes logo-bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-
-/* Main Content Styles */
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
-  margin: 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-  max-width: 600px;
+  background: var(--primary);
+  padding: 2rem;
   text-align: center;
-  animation: fadeIn 1s ease-in-out;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Button Styles */
+header::before {
+  content: "😂";
+  position: absolute;
+  font-size: 8rem;
+  opacity: 0.1;
+  right: -2rem;
+  top: -2rem;
+  transform: rotate(15deg);
+}
+
+.logo {
+  width: 180px;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05) rotate(5deg);
+}
+
+/* Main Content */
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.joke-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.joke-card:hover {
+  transform: translateY(-5px);
+}
+
+.joke-card p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+/* Modern Button Style */
 button {
-  background: #ffcc00;
-  color: #333;
-  border: 2px solid #333;
-  padding: 10px 20px;
+  background: var(--secondary);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 50px;
   cursor: pointer;
-  border-radius: 5px;
-  font-size: 1em;
-  transition: transform 0.2s ease, background 0.3s ease;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 button:hover {
-  background: #ffa500;
-  transform: scale(1.1) rotate(5deg);
+  background: var(--primary);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-button:active {
-  transform: scale(0.9) rotate(-5deg);
-}
-
-/* Footer Styles */
+/* Footer */
 footer {
-  background: #ff6f61;
+  background: var(--primary);
   color: white;
-  width: 100%;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
+  padding: 1rem;
   text-align: center;
-  font-size: 0.9em;
-  box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 0.9rem;
 }
 
 /* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.joke-card {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Loading State */
+.loading {
+  position: relative;
+}
+
+.loading::after {
+  content: "🤔";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  animation: thinking 1s infinite;
+}
+
+@keyframes thinking {
+  0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+  50% { transform: translate(-50%, -50%) rotate(15deg); }
 }
