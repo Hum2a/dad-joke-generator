@@ -1,22 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dad Joke Generator</title>
+    <title>Dad Joke Generator - Hilarious Dad Jokes On Demand</title>
+    <meta name="description" content="Get hilarious dad jokes with a single click. The best place for clean, family-friendly jokes that'll make you laugh or groan!">
+    <meta name="keywords" content="dad jokes, joke generator, funny jokes, puns, dad humor, family jokes">
+    <meta name="author" content="Your Name">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-username.github.io/dad-joke-generator/">
+    <meta property="og:title" content="Dad Joke Generator - Hilarious Dad Jokes On Demand">
+    <meta property="og:description" content="Get hilarious dad jokes with a single click. The best place for clean, family-friendly jokes that'll make you laugh or groan!">
+    <meta property="og:image" content="https://your-username.github.io/dad-joke-generator/assets/images/dad-joke-preview.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://your-username.github.io/dad-joke-generator/">
+    <meta property="twitter:title" content="Dad Joke Generator - Hilarious Dad Jokes On Demand">
+    <meta property="twitter:description" content="Get hilarious dad jokes with a single click. The best place for clean, family-friendly jokes that'll make you laugh or groan!">
+    <meta property="twitter:image" content="https://your-username.github.io/dad-joke-generator/assets/images/dad-joke-preview.jpg">
+
+    <!-- Favicon -->
     {{content-for "head"}}
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="{{rootURL}}assets/vendor.css">
     <link rel="stylesheet" href="{{rootURL}}assets/dad-joke-generator.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://your-username.github.io/dad-joke-generator/">
   </head>
   <body>
     {{content-for "body"}}
     <noscript>
-      This app requires JavaScript to run. Please enable JavaScript in your browser.
+      <p>This app requires JavaScript to run. Please enable JavaScript in your browser to enjoy hilarious dad jokes!</p>
     </noscript>
     <div id="ember-app"></div>
     <script src="{{rootURL}}assets/vendor.js"></script>
